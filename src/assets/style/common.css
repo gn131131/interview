@@ -1,0 +1,7 @@
+section {
+  margin: 0 0.5rem;
+  padding: 0.2rem 0;
+}
+section:not(:last-of-type) {
+  border-bottom: 1px solid gray;
+}
