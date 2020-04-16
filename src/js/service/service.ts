@@ -22,15 +22,9 @@ export default class MainService {
         ${obj.sub
           .map(
             (subitem: any) => `
-            <h2>${subitem.title}</h2>
-            <p>${subitem.content}</p>
-            ${
-              typeof subitem.content === "string" ||
-              typeof subitem.content === "number"
-                ? `<p>${subitem.content}</p>`
-                : subitem.content.map((item: any) => `<p>${item}</p>`).join("")
-            }
-          `
+              <h2>${subitem.title}</h2>
+              ${subitem.content.map((item: any) => `<p>${item}</p>`).join("")}
+            `
           )
           .join("")}
       </section>
