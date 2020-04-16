@@ -2,6 +2,12 @@ section {
   margin: 0 0.5rem;
   padding: 0.2rem 0;
 }
+section h2 {
+  padding-left: 0.2rem;
+}
+section p {
+  padding-left: 0.4rem;
+}
 section:not(:last-of-type) {
   border-bottom: 1px solid gray;
 }
