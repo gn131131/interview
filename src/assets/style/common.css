@@ -11,3 +11,11 @@ section p {
 section:not(:last-of-type) {
   border-bottom: 1px solid gray;
 }
+pre {
+  font-family: Consolas;
+  background: lightgrey;
+  cursor: pointer;
+}
+pre:hover {
+  background: #bababa;
+}

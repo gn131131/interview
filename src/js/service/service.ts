@@ -7,6 +7,7 @@
  * @LastEditTime: 2020-03-02 15:50:54
  */
 import $ from "jquery";
+import ClipboardJS from "clipboard";
 
 export default class MainService {
   constructor() {}
@@ -23,12 +24,22 @@ export default class MainService {
           .map(
             (subitem: any) => `
               <h2>${subitem.title}</h2>
-              ${subitem.content.map((item: any) => `<p>${item}</p>`).join("")}
+              ${subitem.content
+                .map(
+                  (item: any) =>
+                    `<pre data-clipboard-text="${item}">${item}</pre>`
+                )
+                .join("")}
             `
           )
           .join("")}
       </section>
     `;
     $("#view").prepend(inner);
+    this.clickToCopy("pre");
+  }
+
+  clickToCopy(node: any) {
+    var clipboard = new ClipboardJS(node);
   }
 }
