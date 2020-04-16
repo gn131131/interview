@@ -49,18 +49,39 @@ const CONSTANT = {
         ],
       },
       {
-        title: '5.通过原型创建',
+        title: "5.通过原型创建",
         content: [
           `
           function Person() {
             Person.prototype.name = 'Tony';
             Person.prototype.age = 18;
           }
-          var person = new Person();
+          var person1 = new Person();
+          person1.name = 'Bob';
+          var person2 = new Person();
+          console.log(person1, person2);
+          console.log(person1 instanceof Person, person2 instanceof Person);`,
+        ],
+      },
+      {
+        title: "6.组合使用构造函数和原型创建",
+        content: [
+          `
+          function Person(name, age) {
+            this.name = name;
+            this.age = age;
+          }
+          Person.prototype = {
+            constructor: Person,
+            sayName: function () {
+              alert(this.name);
+            }
+          };
+          var person = new Person('Tony', 18);
           console.log(person);
-          console.log(person instanceof Person);`
-        ]
-      }
+          person.sayName();`,
+        ],
+      },
     ],
   },
 };
