@@ -1,4 +1,5 @@
 import MainService from "./service/service";
+import CONSTANT from "./constant/constant";
 
 export default class MainFn {
   service: any;
@@ -8,13 +9,11 @@ export default class MainFn {
   }
 
   init() {
-    this.createObject();
+    this.render();
   }
 
-  // javascript 对象的几种创建方式
-  createObject() {
-    const title = "javascript 对象的几种创建方式";
-    const content = "";
-    this.service.createSection(title, content);
+  render() {
+    this.service.cleanSection();
+    this.service.createSection(CONSTANT.sections);
   }
 }

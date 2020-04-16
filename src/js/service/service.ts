@@ -11,14 +11,27 @@ import $ from "jquery";
 export default class MainService {
   constructor() {}
 
-  createSection(title: any, subtitle: any, content: any) {
+  cleanSection() {
+    $("#view").empty();
+  }
+
+  createSection(obj: any) {
     let inner = `
       <section>
-        <h1>${title}</h1>
-        <h2>${subtitle}</h2>
-        }
+        <h1>${obj.title}</h1>
+        ${obj.sub.map(
+          (subitem: any) => `
+            <h2>${subitem.title}</h2>
+            ${
+              typeof subitem.content === "string" ||
+              typeof subitem.content === "number"
+                ? `<p>${subitem.content}</p>`
+                : subitem.content.map((item: any) => `<p>${item}</p>`)
+            }
+          `
+        )}
       </section>
     `;
-    $("body").prepend(inner);
+    $("#view").prepend(inner);
   }
 }
