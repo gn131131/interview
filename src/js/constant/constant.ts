@@ -96,6 +96,58 @@ const CONSTANT = {
         },
       ],
     },
+    {
+      title: "js中如何检测一个变量是string类型",
+      sub: [
+        {
+          title: "1.typeof",
+          content: [
+            `
+          typeof 'abc' === 'string'`,
+          ],
+        },
+        {
+          title: "2.constructor",
+          content: [
+            `
+          'abc'.constructor === String`,
+          ],
+        },
+        {
+          title: "3.Object.prototype.toString.call()",
+          content: [
+            `
+          Object.prototype.toString.call('abc') === '[object String]'`,
+          ],
+        },
+      ],
+    },
+    {
+      title: "js 去除字符串空格",
+      sub: [
+        {
+          title: "1.replace方法正则匹配替换",
+          content: [],
+        },
+        {
+          title: "2.trim方法去除两端空格",
+          content: [],
+        },
+        {
+          title: "3.$.trim方法去除两端空格",
+          content: [],
+        },
+      ],
+    },
+    {
+      title: "js 有什么特点",
+      sub: [
+        {
+          title: "1.脚本语言，运行时逐一解释",
+          content: [],
+        },
+      ],
+    },
   ],
 };
 
