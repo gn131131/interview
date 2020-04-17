@@ -16,25 +16,28 @@ export default class MainService {
     $("#view").empty();
   }
 
-  createSection(obj: any) {
+  createSection(arr: any) {
     let inner = `
-      <section>
-        <h1>${obj.title}</h1>
-        ${obj.sub
-          .map(
-            (subitem: any) => `
-              <h2>${subitem.title}</h2>
-              ${subitem.content
-                .map(
-                  (item: any) =>
-                    `<pre data-clipboard-text="${item}">${item}</pre>`
-                )
-                .join("")}
-            `
-          )
-          .join("")}
-      </section>
-    `;
+      ${arr
+        .map(
+          (section: any) => `
+          <section>
+            <h1>${section.title}</h1>
+            ${section.sub
+              .map(
+                (subitem: any) => `
+                  <h2>${subitem.title}</h2>
+                  ${subitem.content
+                    .map(
+                      (item: any) =>
+                        `<pre data-clipboard-text="${item}">${item}</pre>`
+                    )
+                    .join("")}`
+              )
+              .join("")}
+          </section>`
+        )
+        .join("")}`;
     $("#view").prepend(inner);
     this.clickToCopy("pre");
   }
