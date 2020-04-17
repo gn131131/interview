@@ -1,4 +1,4 @@
-const CONSTANT = {
+const CONSTANT: any = {
   sections: [
     {
       title: "javascript 对象的几种创建方式",
@@ -85,14 +85,11 @@ const CONSTANT = {
       title: "document load 和 document ready 有什么区别？",
       sub: [
         {
-          title: "document load",
-          content: [`load是当前页面全部页面加载完后执行`],
+          title: "load是当前页面全部页面加载完后执行",
         },
         {
-          title: "document ready",
-          content: [
-            `ready是dom加载完执行，不包含css、图片等，相比load会较快，只有jquery有ready`,
-          ],
+          title:
+            "ready是dom加载完执行，不包含css、图片等，相比load会较快，只有jquery有ready",
         },
       ],
     },
@@ -127,24 +124,40 @@ const CONSTANT = {
       sub: [
         {
           title: "1.replace方法正则匹配替换",
-          content: [],
         },
         {
           title: "2.trim方法去除两端空格",
-          content: [],
         },
         {
           title: "3.$.trim方法去除两端空格",
-          content: [],
         },
       ],
     },
     {
-      title: "js 有什么特点",
+      title: "js语言 有什么特点",
       sub: [
         {
           title: "1.脚本语言，运行时逐一解释",
-          content: [],
+        },
+        {
+          title: "2.基于原型链的面向对象编程语言",
+        },
+        {
+          title: "3.弱类型语言",
+        },
+        {
+          title: "4.事件驱动，不需要web服务器即可对用户操作进行响应",
+        },
+        {
+          title: "5.不依赖平台，需要浏览器兼容即可",
+        },
+      ],
+    },
+    {
+      title: "事件委托是什么",
+      sub: [
+        {
+          title: "",
         },
       ],
     },

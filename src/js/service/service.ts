@@ -26,13 +26,17 @@ export default class MainService {
             ${section.sub
               .map(
                 (subitem: any) => `
-                  <h2>${subitem.title}</h2>
-                  ${subitem.content
-                    .map(
-                      (item: any) =>
-                        `<pre data-clipboard-text="${item}">${item}</pre>`
-                    )
-                    .join("")}`
+                  <h3>${subitem.title}</h3>
+                  ${
+                    subitem.content
+                      ? subitem.content
+                          .map(
+                            (item: any) =>
+                              `<pre data-clipboard-text="${item}">${item}</pre>`
+                          )
+                          .join("")
+                      : ""
+                  }`
               )
               .join("")}
           </section>`
